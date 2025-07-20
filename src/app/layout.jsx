@@ -23,6 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/assets/logo/64x64.ico" />
+      </head>
       <body
         className={`${ubuntuSans.variable} ${ubuntuSansMono.variable} antialiased font-sans`}
       >
