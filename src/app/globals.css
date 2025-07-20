@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f8f8;
+  --foreground: #161616;
+
+  --nav-background: rgb(241, 252, 249);
+  --link-hover-background: rgba(119, 189, 255, 0.36);
+  
+  --animate-ping-reduced: pingReduced 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@theme inline {
+  --font-sans: var(--font-ubuntu-sans);
+  --font-mono: var(--font-ubuntu-sans-mono);
+}
+
+@keyframes pingReduced {
+  75%, 100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1d29;
+    --foreground: #e4e4e4;
+    --nav-background: rgb(12, 20, 48);
+    --link-hover-background: rgba(53, 84, 255, 0.36);
+  }
+}
+
+nav {
+  background: var(--nav-background);
+}
+
+a {
+  border-radius: .5rem;
+}
+
+@media (hover: hover) {
+  a {
+    transition: .2s background;
+
+    &:hover {
+      background: var(--link-hover-background);
+    }
+  }
+}
