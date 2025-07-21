@@ -11,16 +11,14 @@ export default function StatusCard({ status = [] }) {
   }, [status]);
 
   return (
-    <section className="flex flex-row items-center p-4 px-6 rounded-3xl shadow-[0_0_8px_gray] my-3">
-      <div className="hidden select-none pointer-events-none bg-red-500 bg-gray-500 bg-green-500 after:bg-red-500 after:bg-gray-500 after:bg-green-500">pre-renders</div>
-
+    <section className="flex flex-row items-center p-4 px-6 rounded-3xl shadow-[0_0_6px_gray] my-3">
       <div className={`rounded-full size-12 relative after:content-[''] after:absolute after:inset-0 after:rounded-full after:size-12 after:animate-(--animate-ping-reduced) m-4 bg-${pingColor} after:bg-${pingColor}`}></div>
-      <h3 className="ml-1 text-4xl font-medium">
+      <h3 className={`ml-1 text-4xl font-medium ${status?.length ? 'text-inherit' : 'text-gray-500'}`}>
         {
           status?.length ? (
-            status.every(item => item) ? "All systems Operational"
-              : status.some(item => !item) ? "Some systems down"
-              : "All systems down"
+            status.every(item => item) ? (<>All systems <span className="text-green-500">Operational</span></>)
+              : status.some(item => !item) ? (<>Some systems <span className="text-red-500">Down</span></>)
+              : (<>All systems <span className="text-red-500">Down</span></>)
           ) : "Loading..."
         }
       </h3>

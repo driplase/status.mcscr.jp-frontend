@@ -51,7 +51,7 @@ export default function Home() {
       <div className="m-6">
         <StatusCard status={currentStatus} />
 
-        <section className="mt-8 p-6 rounded-3xl shadow-[0_0_8px_gray]">
+        <section className="mt-8 p-6 py-4 rounded-3xl shadow-[0_0_6px_gray]">
           <Monitor name="ScratchJP Minecraft Server" data={statusHistory} />
         </section>
       </div>
