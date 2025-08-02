@@ -58,7 +58,7 @@ export default function Monitor({ name, data }) {
                     <p>
                       {
                         info.offlineSeconds < 0 ? "No Data"
-                        : info.offlineSeconds ? `Down for timeFormat(info.offlineSeconds)`
+                        : info.offlineSeconds ? `Down for ${timeFormat(info.offlineSeconds)}`
                         : "Operational"
                       }
                     </p>
