@@ -39,7 +39,7 @@ export default function RootLayout({
                 src="/assets/logo/64x64.png" 
                 width="36" 
                 height="36"
-                alt="ScJPMC (logo?)"
+                alt="ScJPMC"
                 className="mr-2 navbar-logo"
               />
               <div className="text-2xl font-medium">
